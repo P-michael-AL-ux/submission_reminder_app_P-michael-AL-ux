@@ -18,7 +18,7 @@ while true; do
                 echo -n "."
                 sleep 0.3
             done
-            sleep 1
+            sleep 0.5
             echo -ne "\r                                                          \r"
             echo -e "\n----------------------------------------------------------\n"
             #Done with animation now exiting
@@ -36,7 +36,7 @@ while true; do
                 echo -n "."
                 sleep 0.3
             done
-            sleep 1
+            sleep 0.5
             echo -ne "\r                                                          \r"
             echo -e "\n----------------------------------------------------------\n"
             break
@@ -52,15 +52,12 @@ while true; do
     fi
 done
 
-#now creating a directory with the users input
-mkdir -p "submission_reminder_$yourName"
-
 #creating varialbe names for the directory
 main_dir="submission_reminder_$yourName"
 
 #Checking if the directory is already present or not.
-if [[ ! "$main_dir" && -n "$yourName"  ]]; then
-   mkdir -p "submission_reminder_$yourName"
+if [[ ! -d "$main_dir" && -n "$yourName"  ]]; then
+   mkdir -p "$main_dir"
    echo -e "\n----------------------------------------------------------\n"
    echo -ne "Creating the directory.."
    #animation
@@ -68,7 +65,7 @@ if [[ ! "$main_dir" && -n "$yourName"  ]]; then
      echo -n "."
      sleep 0.3
    done
-   sleep 1
+   sleep 0.5
    echo -ne "\r                                                          \r"
    #end of animation, now creating the file using touch command
 
@@ -96,6 +93,7 @@ echo "$main_dir/startup.sh"
 }
 
 #creating the main, sub directories and files 
+
 #using the for loop to read line by line the content of the file_path function
 #to make it essay to create the files
 for i in $(file_paths); do
@@ -107,7 +105,7 @@ for i in $(file_paths); do
     echo -n "."
     sleep 0.3
  done
- sleep 1.5
+ sleep 0.5
  echo -ne "\r                                                          \r"
  #the echo "\r   \r" clears the whole line with the message after it has desplayed the message
  echo "Directory $i created successfully"
@@ -120,7 +118,7 @@ for i in $(file_paths); do
      echo -n "."
      sleep 0.3
    done
-   sleep 1
+   sleep 0.5
    echo -ne "\r                                                          \r"
    #end of animation, now creating the file using touch command
 
@@ -129,23 +127,24 @@ for i in $(file_paths); do
    echo -ne "Checking if the file ends with *.sh.."
 
    #Animation 
-   for j in {1..5}; do
+   for j in {1..3}; do
      echo -n "."
      sleep 0.3
    done
-   sleep 1
+   sleep 0.5
    echo -ne "\r                                                          \r"
    #end of animation
 
    #now checking if the file ends with *.sh and making the files excutable if so
    if [[ -f "$i" && "$i" == *.sh ]]; then
    #animation
+   echo "                                                              "
     echo -ne " File found ending with *.sh. Making it executable.."
-    for j in {1..5}; do
+    for j in {1..3}; do
        echo -n "."
        sleep 0.3
     done
-    sleep 1
+    sleep 0.5
     echo -ne "\r                                                                \r"
     #end of animation
 

@@ -222,7 +222,7 @@ Chiagoziem, Git, submitted
 Divine, Shell Navigation, not submitted
 Anissa, Shell Basics, submitted
 Agnes, Shell Basics, not submitted
-Bol, Git , not submitted
+Bol, Git, not submitted
 Chol, Shell Basics, submitted
 Makuei, Git, not submitted
 Jack, Shell Navigation, submitted' > $subm_file

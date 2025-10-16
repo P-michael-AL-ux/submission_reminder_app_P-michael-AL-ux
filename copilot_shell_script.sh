@@ -23,7 +23,7 @@ elif [[ ${#srd[@]} == 1 ]]; then
 #the script is going to list them and prompts the user to write the directory name from the list.
 else
     echo -e "----------------------------------------------------------\n"
-    echo "Multifull directories found with $srd "
+    echo "Multifull directories found starting with submission_reminder_* "
     echo -e "Please Select the directory you want to use from the list below.\n"
     echo -e "----------------------------------------------------------\n"
 

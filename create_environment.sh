@@ -59,7 +59,7 @@ mkdir -p "submission_reminder_$yourName"
 main_dir="submission_reminder_$yourName"
 
 #Checking if the directory is already present or not.
-if [[ -d "$main_dir" && -n "$yourName"  ]]; then
+if [[ ! "$main_dir" && -n "$yourName"  ]]; then
    mkdir -p "submission_reminder_$yourName"
    echo -e "\n----------------------------------------------------------\n"
    echo -ne "Creating the directory.."
@@ -80,7 +80,7 @@ elif [[ -z "$yourName" ]]; then
 else
    echo -e "\n----------------------------------------------------------\n"
    echo -e "\nThe directory exist\n"
-
+   echo -e "\n----------------------------------------------------------\n"
    echo "TREE DIAGRAM OF $main_dir"
    tree $main_dir
    echo -e "\n----------------------------------------------------------\n"
